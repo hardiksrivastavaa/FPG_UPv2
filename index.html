@@ -10,23 +10,29 @@
     <meta name="keywords"
         content="Front Page Generator, branch selection, subject selection, student name input, download front page, generate front pages, academic front page generator, Feroze Gandhi Polytechnic, Computer Science and Engineering, Information Technology, FGP" />
     <title>Front Page Generator</title>
-    <link rel="shortcut icon" href="fpg.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
 
-<body class="bg-page flex items-center justify-center min-h-screen p-3 transition-colors duration-300">
-    <div class="max-w-4xl w-full">
-        <form id="form" name="FrontPageFrom" class="bg-white p-8 rounded-xl shadow-2xl">
+<body
+    class="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-700 flex items-center justify-center min-h-screen p-3 transition-colors duration-300">
+
+    <!-- Front Page Generator -->
+    <div id="FPG" class="max-w-4xl w-full">
+        <form id="frontPageForm" class="bg-white p-8 rounded-xl shadow-2xl">
             <h1 class="text-2xl font-extrabold mb-3 mt-2 text-center text-blue-800">
                 Front Page Generator
             </h1>
-            <hr>
+            <hr />
 
             <div class="mb-4 mt-6">
                 <label for="district" class="block text-gray-700 mb-2 font-semibold">District</label>
-                <select name="district" id="district"
-                    class="formelement block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-800 focus:border-indigo-500"
+                <select name="district" id="district" onchange="handleDropdownChange()"
+                    class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-600 transition-all duration-300 ease-in-out outline-none focus:shadow-[0_0_10px_#4f46e5]"
                     required>
                     <option value="">Select District</option>
                     <option value="Agra">Agra</option>
@@ -92,10 +98,11 @@
                     <option value="Rampur">Rampur</option>
                     <option value="Saharanpur">Saharanpur</option>
                     <option value="Sant Kabir Nagar">Sant Kabir Nagar</option>
-                    <option value="Sant Ravidas Nagar (Bhadohi)">Sant Ravidas Nagar (Bhadohi)</option>
+                    <option value="Bhadohi">Bhadohi</option>
                     <option value="Shahjahanpur">Shahjahanpur</option>
                     <option value="Shamli">Shamli</option>
                     <option value="Shravasti">Shravasti</option>
+                    <option value="Sambhal">Sambhal</option>
                     <option value="Siddharthnagar">Siddharthnagar</option>
                     <option value="Sitapur">Sitapur</option>
                     <option value="Sonbhadra">Sonbhadra</option>
@@ -105,11 +112,10 @@
                 </select>
             </div>
 
-
             <div class="mb-4">
                 <label for="college" class="block text-gray-700 mb-2 font-semibold">College</label>
                 <select name="college" id="college"
-                    class="formelement block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-500"
+                    class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-600 transition-all duration-300 ease-in-out outline-none focus:shadow-[0_0_10px_#4f46e5]"
                     required>
                     <option value="">Select College</option>
                     <!-- Options will be dynamically populated based on branch selection -->
@@ -118,25 +124,112 @@
 
             <!-- File input for college logo -->
             <div class="mb-4">
-                <label for="logoInput" class="block text-gray-700 mb-2 font-semibold">
+                <label for="collegeLogo" class="block text-gray-700 mb-2 font-semibold">
                     College Logo
                 </label>
-                <input type="file" name="logo" id="logoInput"
-                    class="formelement block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-500"
-                    accept="image/*" />
+                <input type="file" name="collegeLogo" id="collegeLogo"
+                    class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-600 transition-all duration-300 ease-in-out outline-none focus:shadow-[0_0_10px_#4f46e5]"
+                    accept=".png, .jpg, .jpeg, image/png,image/jpg, image/jpeg" />
                 <p class="mt-1 text-sm text-gray-600">
-                    If no logo is uploaded, the official <span class="font-semibold">BTEUP Logo</span> will be applied
+                    If no College Logo is uploaded, the official <span class="font-semibold">BTEUP Logo</span> will be
+                    applied
                     automatically.
                 </p>
+            </div>
+
+
+            <div class="mb-4">
+                <label for="branch" class="block text-gray-700 mb-2 font-semibold">Branch</label>
+                <select name="branch" id="branch"
+                    class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-600 transition-all duration-300 ease-in-out outline-none focus:shadow-[0_0_10px_#4f46e5]"
+                    required>
+                    <option value="">Select Branch</option>
+                    <option value="CSE">Computer Science & Engineering</option>
+                    <option value="IT">Information Technology</option>
+                    <option value="ME">Mechanical Engineering</option>
+                    <option value="ME">Mechanical Engineering (Automobile)</option>
+                    <option value="ME">Mechanical Engineering (Computer Aided Design)</option>
+                    <option value="ME">Mechanical Engineering (Production)</option>
+                    <option value="ME">Mechanical Engineering (Refrigeration & Airconditioning)</option>
+                    <option value="ME">Mechanical Engineering (Maintenance)</option>
+                    <option value="DIP">Diploma In Tool & Mould Making</option>
+                    <option value="DIP">Diploma In Plastic Mould Technology</option>
+                    <option value="EE">Electrical Engineering</option>
+                    <option value="EE">Electrical Engineering (Industrial Control)</option>
+                    <option value="EEE">Electrical & Electronics Engineering</option>
+                    <option value="EC">Electronics Engineering</option>
+                    <option value="EC">Electronics Engineering (Modern Consumer Electronics Appliances)</option>
+                    <option value="EC">Electronics Engineering (Advance Microprocessor & Interface)</option>
+                    <option value="EC">Electronics Engineering (Micro Electronics)</option>
+                    <option value="EC">Electronics & Communication Engineering</option>
+                    <option value="CCN">Communication & Computer Networking</option>
+                    <option value="IC">Instrumentation & Control</option>
+                    <option value="CH">Chemical Engineering</option>
+                    <option value="CH">Chemical Engineering (Petro Chemical)</option>
+                    <option value="CT">Chemical Technology (Fertilizer)</option>
+                    <option value="CT">Chemical Technology (Rubber & Plastic)</option>
+                    <option value="DIP">Diploma In Paint Technology</option>
+                    <option value="CE">Civil Engineering</option>
+                    <option value="CE">Civil Engineering (Environment & Pollution Control)</option>
+                    <option value="CE">Civil & Environment Engineering</option>
+                    <option value="GEN">Architectural Assistantship</option>
+                    <option value="GEN">Interior Design & Decoration</option>
+                    <option value="GEN">Glass & Ceramic Engineering</option>
+                    <option value="DIP">Diploma In Aircraft Maintenance Engineering</option>
+                    <option value="DIP">Diploma In Aircraft Maintenance Engineering (Avionics)</option>
+                    <option value="DIP">Diploma In Aircraft Maintenance Engineering (Helicopter & Powerplants)</option>
+                    <option value="TX">Textile Design</option>
+                    <option value="TX">Textile Design (Textile Printing)</option>
+                    <option value="TX">Textile Technology</option>
+                    <option value="TX">Textile Engineering</option>
+                    <option value="TX">Textile Chemistry</option>
+                    <option value="TX">P.G. Diploma In Textile Design</option>
+                    <option value="GEN">Fashion Designing & Garment Technology</option>
+                    <option value="GEN">Apparel Design & Fashion Technology</option>
+                    <option value="GEN">Costume Design & Garment Technology</option>
+                    <option value="PG">P.G. Diploma in Advertising & Public Relation</option>
+                    <option value="PG">P.G. Diploma in Bio Technology (Tissue Culture)</option>
+                    <option value="PG">P.G. Diploma in Tourism & Travel Management</option>
+                    <option value="PG">P.G. Diploma in Textile Design</option>
+                    <option value="PG">P.G. Diploma in Marketing & Sales Management</option>
+                    <option value="PG">P.G. Diploma in Beauty & Health Care</option>
+                    <option value="PG">P.G. Diploma in Fashion Technology</option>
+                    <option value="PG">P.G. Diploma in Retail Management</option>
+                    <option value="PG">P.G. Diploma in Accountacy (With Computerised Account & Taxation)</option>
+                    <option value="PG">P.G. Diploma in Web Designing</option>
+                    <option value="PG">P.G. Diploma in Computer Hardware & Networking</option>
+                    <option value="PG">P.G. Diploma in Cyber Security</option>
+                    <option value="PG">P.G. Diploma in Data Science & Machine Learning</option>
+                    <option value="PG">P.G. Diploma in Drone Technology</option>
+                    <option value="PG">P.G. Diploma in Internet Of Things (Iot)</option>
+                    <option value="PG">P.G. Diploma in Computer Application</option>
+                    <option value="MN">Mining Engineering</option>
+                    <option value="GEN">Agriculture Engineering</option>
+                    <option value="GEN">Dairy Engineering</option>
+                    <option value="GEN">Renewable Energy</option>
+                    <option value="GEN">Leather Technology Footwear (Computer Aided Shoe Design)</option>
+                    <option value="GEN">Leather Technology (Tanning)</option>
+                    <option value="GEN">Carpet Technology</option>
+                    <option value="GEN">Food Technology</option>
+                    <option value="GEN">Paper & Pulp Technology</option>
+                    <option value="GEN">Industrial Safety</option>
+                    <option value="GEN">Customer Service Management</option>
+                    <option value="GEN">Modern Office Management & Secretarial Practice</option>
+                    <option value="GEN">Home Science</option>
+                    <option value="GEN">Library & Information Science</option>
+                    <option value="DIP">Diploma In Journalism & Mass Communication</option>
+                    <option value="DIP">Diploma In Pharmacy</option>
+                    <option value="GEN">Craft Technology</option>
+                    <option value="GEN">Printing Technology</option>
+                </select>
             </div>
 
             <div class="mb-4">
                 <label for="session" class="block text-gray-700 mb-2 font-semibold">Session</label>
                 <select name="session" id="session"
-                    class="formelement block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-500"
+                    class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-600 transition-all duration-300 ease-in-out outline-none focus:shadow-[0_0_10px_#4f46e5]"
                     required>
                     <option value="">Select Session</option>
-
                     <option value="2023-24">2023-24</option>
                     <option value="2024-25">2024-25</option>
                     <option value="2025-26">2025-26</option>
@@ -150,9 +243,12 @@
             <div class="mb-4">
                 <label for="yearSem" class="block text-gray-700 mb-2 font-semibold">Year & Semester</label>
                 <select name="yearSem" id="yearSem"
-                    class="formelement block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-500"
+                    class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-600 transition-all duration-300 ease-in-out outline-none focus:shadow-[0_0_10px_#4f46e5]"
                     required>
                     <option value="">Select Year & Semester</option>
+                    <option value="1st">1st Year</option>
+                    <option value="2nd">2nd Year</option>
+                    <option value="3rd">3rd Year</option>
                     <option value="1st - 1st">Ist Year - 1st Semester</option>
                     <option value="1st - 2nd">Ist Year - 2nd Semester</option>
                     <option value="2nd - 3rd">IInd Year - 3rd Semester</option>
@@ -163,64 +259,167 @@
             </div>
 
             <div class="mb-4">
-                <label for="branch" class="block text-gray-700 mb-2 font-semibold">Branch</label>
-                <input type="text" name="branch" id="branch" placeholder="Enter branch Name"
-                    class="formelement block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-500"
+                <label for="subjectInput" class="block text-gray-700 mb-2 font-semibold">Subject</label>
+                <input type="text" name="subjectInput" id="subjectInput" placeholder="Enter Subject Name"
+                    class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-600 transition-all duration-300 ease-in-out outline-none focus:shadow-[0_0_10px_#4f46e5]"
                     required />
             </div>
 
             <div class="mb-4">
-                <label for="subject" class="block text-gray-700 mb-2 font-semibold">Subject</label>
-                <input type="text" name="subject" id="subject" placeholder="Enter Subject Name"
-                    class="formelement block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-500"
+                <label for="teacherInput" class="block text-gray-700 mb-2 font-semibold">Teacher</label>
+                <input type="text" name="teacherInput" id="teacherInput" placeholder="Enter Teacher Name"
+                    class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-600 transition-all duration-300 ease-in-out outline-none focus:shadow-[0_0_10px_#4f46e5]"
                     required />
             </div>
 
             <div class="mb-4">
-                <label for="subjectTeacher" class="block text-gray-700 mb-2 font-semibold">Teacher Name</label>
-                <input type="text" name="subjectTeacher" id="subjectTeacher" placeholder="Enter Teacher Name"
-                    class="formelement block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-500"
-                    required />
-            </div>
-
-            <div class="mb-4">
-                <label for="nameInput" class="block text-gray-700 mb-2 font-semibold">Your Name</label>
+                <label for="nameInput" class="block text-gray-700 mb-2 font-semibold">Name</label>
                 <input type="text" name="nameInput" id="nameInput" placeholder="Enter Your Name"
-                    class="formelement block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-500"
+                    class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-600 transition-all duration-300 ease-in-out outline-none focus:shadow-[0_0_10px_#4f46e5]"
                     required />
             </div>
 
             <div class="mb-4">
-                <label for="enrollmentInput" class="block text-gray-700 mb-2 font-semibold">Enrollment Number
-                    (Optional)</label>
+                <label for="enrollmentInput" class="block text-gray-700 mb-2 font-semibold">Enrollment
+                    Number(Optional)</label>
                 <input type="text" name="enrollmentInput" id="enrollmentInput"
                     placeholder="Enter Your Enrollment Number"
-                    class="formelement block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-500" />
+                    class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-600 transition-all duration-300 ease-in-out outline-none focus:shadow-[0_0_10px_#4f46e5]" />
             </div>
 
-            <div class="flex flex-col md:flex-row md:justify-evenly">
-
+            <div class="flex justify-center px-4">
                 <button type="submit"
-                    class="btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg shadow-lg transform hover:scale-105 mb-4 md:mb-0"
-                    id="generateBtn">Generate Front Page</button>
-
-                <a class="downloadbtn" id="downloadLink" style="display: none"><i
-                        class="fa-regular fa-circle-down"></i>Download PDF</a>
+                    class="bg-blue-500 text-white font-semibold py-2 px-6 rounded-lg shadow-lg transform duration-500 hover:scale-105 hover:bg-blue-600">
+                    Generate Front Page
+                </button>
             </div>
 
-            <footer class="mt-8 text-center text-gray-600 border-t border-gray-300 pt-4 text-sm">
-                <p>Developed with ❤️ by Team FPG</p>
-                <p><a href="dev.html" class="text-blue-500">About Developers</a></p>
-
+            <footer class="mt-8 text-center text-black-800 border-t border-gray-300 pt-4 text-sm font-semibold">
+                <p>
+                    Developed with ❤️ by
+                    <a href="#" id="openDevModal" class="text-blue-700 hover:underline">Hardik Srivastava</a>
+                </p>
             </footer>
         </form>
-
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
-    <script src="colleges.js"></script>
-    <script src="script.js"></script>
+    <!-- Feedback Modal -->
+    <div id="feedbackModal"
+        class="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center z-50 hidden">
+        <div id="feedbackCard" class="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-xl relative">
+            <!-- Close Button -->
+            <button id="closeModal" class="absolute top-1 right-2 text-gray-600 hover:text-gray-900 text-4xl">
+                &times;
+            </button>
 
+            <!-- Feedback Form  -->
+            <form id="feedbackForm" name="feedbackForm">
+                <h3 class="text-2xl font-semibold mb-3 mt-6 text-gray-800 text-center">
+                    Submit Your Feedback
+                </h3>
+                <hr class="mb-6" />
+
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 mb-2 font-semibold">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Your Name"
+                        class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-600 transition-all duration-300 ease-in-out outline-none focus:shadow-[0_0_10px_#4f46e5]"
+                        required />
+                </div>
+
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 mb-2 font-semibold">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email"
+                        class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-600 transition-all duration-300 ease-in-out outline-none focus:shadow-[0_0_10px_#4f46e5]"
+                        required />
+                </div>
+
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 mb-2 font-semibold">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Type your feedback here..."
+                        class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-indigo-300 focus:border-indigo-600 transition-all duration-300 ease-in-out outline-none focus:shadow-[0_0_10px_#4f46e5]"
+                        required></textarea>
+                </div>
+
+                <div class="flex justify-center pt-2">
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 w-1/4">
+                        Submit
+                    </button>
+                </div>
+            </form>
+
+            <!-- Thank You Message (initially hidden) -->
+            <div id="thankYouMessage" class="hidden text-center">
+                <img src="./assets/logo.png" alt="FPG"
+                    class="w-45 h-42 mt-4 border border-gray-300 rounded-full mx-auto shadow-md" />
+
+                <h3 id="heading" class="text-2xl font-semibold text-green-600 mb-4 mt-6"></h3>
+                <p id="body" class="text-gray-700"></p>
+                <p id="subText" class="text-gray-600 mt-2"></p>
+                <button id="closeThankYou"
+                    class="mt-6 mb-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Developer Modal -->
+    <div id="developerModal"
+        class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center z-50 transition-opacity duration-300">
+        <div id="developerCard"
+            class="transform scale-95 opacity-0 bg-white rounded-lg shadow-lg max-w-xl w-[90%] p-6 relative transition-all duration-300 ease-out">
+            <button id="closeDevModal" class="absolute top-1 right-2 text-gray-500 hover:text-gray-900 text-4xl">
+                &times;
+            </button>
+
+            <!-- Developer Card -->
+            <div class="text-center">
+                <img src="./assets/hardik.jpg" alt="Hardik Srivastava" class="w-32 h-32 rounded-full mx-auto" />
+                <h2 class="text-2xl font-semibold mt-4">Hardik Srivastava</h2>
+                <p class="text-lg mt-2">Web Developer</p>
+
+                <div class="flex justify-center mt-4 gap-4 text-xl text-gray-600">
+                    <a href="https://github.com/hardiksrivastavaa/" target="_blank">
+                        <i
+                            class="fab fa-github hover:text-blue-500 hover:scale-105 transition-transform duration-200"></i>
+                    </a>
+                    <a href="https://www.instagram.com/hardiksrivastaava/" target="_blank">
+                        <i
+                            class="fab fa-instagram hover:text-blue-500 hover:scale-105 transition-transform duration-200"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/hardiksrivastavaa/" target="_blank">
+                        <i
+                            class="fab fa-linkedin hover:text-blue-500 hover:scale-105 transition-transform duration-200"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center w-[90%] max-w-md">
+            <h2 id="errorHeading" class="text-2xl font-bold text-red-600 mb-3">Something Went Wrong</h2>
+            <hr class="mb-6" />
+            <p id="errorMessage" class="text-gray-700">
+                Sorry for the Inconvenience 🙏<br />
+                We're working to fix this issue — please try again shortly.
+            </p>
+            <button onclick="closeErrorModal()"
+                class="mt-6 px-4 py-2 bg-yellow-600 text-white rounded hover:bg-yellow-700">
+                Okay, Got It
+            </button>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="./js/helper.js"></script>
+    <script src="./js/devinfo.js"></script>
+    <script src="./js/thankyou.js"></script>
+    <script src="./js/feedback.js"></script>
+    <script src="./js/colleges.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

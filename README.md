@@ -40,24 +40,10 @@ A: No, there is no limit. You can generate as many front pages as you need.
 ### Q: Can I customize the format of the front page?
 A: Currently, the format of the front page is predefined. However, we may consider adding customization options in future updates.
 
-## Developers
-
-This tool was developed by:
-
-- **Hardik Srivastava**: Web Developer, 2nd year CSE student at Feroze Gandhi Polytechnic, Raebareli.
-  - [LinkedIn](https://www.linkedin.com/in/hardiksrivastavaa/) <i class="fab fa-linkedin"></i>
-  - [GitHub](https://github.com/hardiksrivastavaa/) <i class="fab fa-github"></i>
-  - [Instagram](https://www.instagram.com/hardiksrivastavaaa/) <i class="fab fa-instagram"></i>
-
-- **Siddhi Singh**: Web Developer, 2nd year IT student at Government Girls Polytechnic, Ballia.
-  - [LinkedIn](https://linkedin.com/in/siddhi-singh07/) <i class="fab fa-linkedin"></i>
-  - [GitHub](https://github.com/SiddhiSingh25/) <i class="fab fa-github"></i>
-  - [Instagram](https://instagram.com/siddhyy_here/) <i class="fab fa-instagram"></i>
-
 ## Feedback
 
 We welcome your feedback! If you have any suggestions or encounter any issues while using the tool, please feel free to submit your feedback using the form provided on the Developers page.
 
 ## Live Link
 
-You can access the live version of Front Page Generator [here](https://fpg24.vercel.app/).
+You can access the live version of Front Page Generator [here](https://fpglatest.vercel.app/).

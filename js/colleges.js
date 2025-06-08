@@ -11,7 +11,7 @@ const districtData = {
         "Dr. B. R. Ambedkar Polytechnic",
         "Gayatri College of Engineering and Technology",
         "Government Leather Institute, Agra",
-        "Government Polytechnic, Mankeda, Agra",
+        "Government Polytechnic Mankeda, Agra",
         "Heritage Technical College",
         "Hindustan Institute of Technology and Management",
         "K. P. Engineering College",
@@ -19,13 +19,13 @@ const districtData = {
         "Kunal College of Pharmacy",
         "Kunal Professional Education Academy",
         "Neelam College of Engineering and Technology",
-        "Raja Balwant Singh Polytechnic, Bichpuri, Agra",
+        "Raja Balwant Singh Polytechnic Bichpuri, Agra",
         "Sai Nath College",
     ],
     Aligarh: [
         "A. D. R. S. Institute of Technology and Management",
         "Acn College of Polytechnic",
-        "Institute of Technology and Management (341)",
+        "Institute of Technology and Management",
         "Mahalwar Institute of Pharmacy",
         "Mahalwar Institute of Technology",
         "Mahamaya Polytechnic for Information Technology",
@@ -38,7 +38,7 @@ const districtData = {
     ],
     Allahabad: [
         "Government Girls Polytechnic Meja",
-        "Government Girls Polytechnic, Allahabad",
+        "Government Girls Polytechnic Allahabad",
         "Handia Polytechnic Handia Allahabad",
         "Hanswahini Institute of Science and Technology",
         "Hmfa Memorial Institute of Engineering and Technology",
@@ -55,24 +55,23 @@ const districtData = {
         "Sp Memorial Institute Technology",
     ],
     "Ambedkar Nagar": [
-        "Chhatrapati Sahuji Maharaj Government Polytechnic, Ambedkarnagar",
+        "Chhatrapati Sahuji Maharaj Government Polytechnic Ambedkarnagar",
         "Government Polytechnic Baijpur Bhiti, Ambedkarnagar",
         "Vishwanath Memorial College of Pharmacy",
     ],
-    Amethi: ["Government Girls Polytechnic, Amethi", "Sanjay Gandhi Polytechnic"],
+    Amethi: ["Government Girls Polytechnic Amethi", "Sanjay Gandhi Polytechnic"],
     Auraiya: [
-        "Baba Saheb Dr. Bhimrao Ambedkar Government Polytechnic Haidarpur Auraiya",
-        "M. M. I. T., Auraiya",
+        "Baba Saheb Dr. Bhimrao Ambedkar Government Polytechnic",
+        "Mahamaya Polytechnic of Information Technology Auraiya",
     ],
     Azamgarh: [
-        "Azad Polytechnic, Bharthipur",
+        "Azad Polytechnic Bharthipur",
         "Baba Vishwanath Institute of Technology",
         "Baijnath Ramnaresh College of Technology",
-        "Government Polytechnic, Bhilihili, Azamgarh (Centrally Assisted)",
+        "Government Polytechnic Bhilihili, Azamgarh",
         "M. S. D. Polytechnic College",
         "Maa Buddha National Institute of Engineering and Technology",
         "Maa Vaishno Maa Sharda Polytechnic",
-        "Pharmacy College",
         "Savitribai Phule Government Polytechnic",
         "Shri Kashi Chandra Dev Yadav Pravidhik Shikshan Sansthan",
         "Swami Sahajanand Polytechnic",
@@ -89,7 +88,7 @@ const districtData = {
         "Shri Krishna College of Engineering",
     ],
     Bahraich: [
-        "Government Girls Polytechnic, Risia, Nanpara, Bahraich",
+        "Government Girls Polytechnic Risia, Nanpara, Bahraich",
         "Government Polytechnic Bahraich",
         "Sanjivani Institute of Technology and Management",
     ],
@@ -98,23 +97,23 @@ const districtData = {
         "Government Polytechnic Jegirsand",
         "Shri Sahdev Paudhariya Polytechnic College",
         "Smt. Fulehra Smarak College of Polytechnic",
-        "Town Polytechnic, Ballia",
+        "Town Polytechnic Ballia",
     ],
     Balrampur: [
-        "Chhatrapati Sahuji Maharaj Government Polytechnic, Balrampur (Running at Govt Polt. Gonda)",
+        "Chhatrapati Sahuji Maharaj Government Polytechnic Balrampur",
         "Shakti College of Pharmacy",
     ],
     Banda: [
         "Government Polytechnic Banda",
-        "Government Polytechnic, Naraini (Banda) U. P.",
+        "Government Polytechnic Naraini Banda",
         "Kali Charan Nigam Institute of Technology",
     ],
     Barabanki: [
         "Emerald – 9 Institute of Management and Technology",
         "Gokaran Narvadeshwar Institute of Technology and Management",
         "Government Polytechnic Barabanki",
-        "Government Polytechnic Jamunia Deeh Harakh (Barabanki)",
-        "Government Polytechnic, Kursi Road, Barabanki",
+        "Government Polytechnic Jamunia Deeh Harakh Barabanki",
+        "Government Polytechnic Kursi Road, Barabanki",
         "Hind Institute of Medical Science",
         "Jahangirabad Institute of Technology for Polytechnic",
         "Nishat Hospitals and Institute of Paramedical Sciences",
@@ -144,13 +143,13 @@ const districtData = {
         "Government Polytechnic Basti",
         "Government Polytechnic Chhabilhakhor Sadar Basti",
     ],
-    "Bhimnagar (Sambhal)": [
+    Sambhal: [
         "Government Polytechnic Chandausi",
         "Swami Dayanand Saraswati Educational Institute",
     ],
     Bijnor: [
         "Government Polytechnic Bijnor Up",
-        "Government Polytechnic Changipur (Chandpur) Bijnor",
+        "Government Polytechnic Changipur Bijnor",
         "Janta College of Pharmacy",
         "Janta College of Polytechnic",
         "K L S Institute of Engineering and Technology",
@@ -165,7 +164,7 @@ const districtData = {
     ],
     Budaun: [
         "Government Polytechnic Budaun",
-        "Government Polytechnic, Alapur, Budaun",
+        "Government Polytechnic Alapur, Budaun",
         "Hariram Satyanaraian Institute of Higher and Technical Education",
     ],
     Bulandshahar: [
@@ -176,7 +175,7 @@ const districtData = {
         "J. K. Institute of Pharmacy and Management",
         "Janta Polytechnic Jahangirabad",
         "Jk Institute of Pharmacy",
-        "Marathwada Institute of Technology (Mit)",
+        "Marathwada Institute of Technology",
         "Modern International College of Pharmacy",
         "Seth Ganga Sagar Jatia Polytechnic",
         "Shivam Technical Campus",
@@ -190,12 +189,12 @@ const districtData = {
         "Shri Tridandideo Hanumat Technical College",
     ],
     Chitrakoot: [
-        "Government Polytechnic, Manikpur",
+        "Government Polytechnic Manikpur",
         "Government Polytechnic Kalchinha Chitrakoot",
     ],
     Deoria: [
-        "Government Polytechnic, Chariyaon Bujurg, Deoria",
-        "Government Polytechnic, Deoria",
+        "Government Polytechnic Chariyaon Bujurg, Deoria",
+        "Government Polytechnic Deoria",
     ],
     Etah: ["Government Polytechnic Etah"],
     Etawah: [
@@ -204,7 +203,7 @@ const districtData = {
         "Sir Madanlal Institute of Pharmacy",
     ],
     Faizabad: [
-        "Aryika Gyanmati Government Girls Polytechnic, Faizabad",
+        "Aryika Gyanmati Government Girls Polytechnic Faizabad",
         "Bhavdiya Institute of Pharmaceutical Sciences and Research",
         "Government Polytechnic Faizabad",
         "Jhunjhunwala P. G. College Faculty of Engineering and Technology",
@@ -219,16 +218,16 @@ const districtData = {
     Firozabad: [
         "Aadilabad Technical Institute",
         "Iklavya College of Pharmacy",
-        "Rajkiya Polytechnic, Firozabad",
+        "Rajkiya Polytechnic Firozabad",
     ],
     "G. B. Nagar": [
-        "Government Polytechnic, Firozabad",
-        "Government Polytechnic, Noida",
-        "Government Polytechnic, Phase – 2nd, Noida",
+        "Government Polytechnic Firozabad",
+        "Government Polytechnic Noida",
+        "Government Polytechnic Phase – 2nd, Noida",
     ],
-    Gonda: ["Government Polytechnic Gonda", "Government Polytechnic, Mankapur"],
+    Gonda: ["Government Polytechnic Gonda", "Government Polytechnic Mankapur"],
     Gorakhpur: [
-        "Dr. Bhim Rao Ambedkar Government Polytechnic, Gorakhpur",
+        "Dr. Bhim Rao Ambedkar Government Polytechnic Gorakhpur",
         "G. D. Memorial College of Pharmacy",
         "Gautam Buddha Polytechnic Institute",
         "Government Girls Polytechnic Gorakhpur",
@@ -241,7 +240,7 @@ const districtData = {
     ],
     Hamirpur: [
         "Gandhi Polytechnic",
-        "Government Polytechnic, Hamirpur",
+        "Government Polytechnic Hamirpur",
         "Hamirpur College of Engineering and Technology",
         "Hamirpur College of Pharmacy",
     ],
@@ -251,8 +250,8 @@ const districtData = {
         "Government Polytechnic Pihani Hardoi",
         "Government Polytechnic Shahabad",
         "Government Polytechnic Umraha Bilgram Hardoi",
-        "Government Polytechnic, Sandila",
-        "Government Polytechnic, Sandila, Hardoi",
+        "Government Polytechnic Sandila",
+        "Government Polytechnic Sandila, Hardoi",
         "Hardoi Institute of Pharmacy and Information Sciences",
         "Hardoi School of Pharmacy",
         "Madhusudan Institute of Pharmacy",
@@ -274,7 +273,7 @@ const districtData = {
         "Rajkiya Polytechnic",
     ],
     Jaunpur: [
-        "Dr. Bhim Rao Ambedkar Government Polytechnic, Kerakat",
+        "Dr. Bhim Rao Ambedkar Government Polytechnic Kerakat",
         "Government Polytechnic Chandauli",
         "Government Polytechnic Jaunpur",
         "Vasant Rao Ambedkar Shikshan Sansthan",
@@ -286,8 +285,8 @@ const districtData = {
         "Government Girls Polytechnic Jhansi",
         "Government Polytechnic",
         "Government Polytechnic Babina",
-        "Government Polytechnic, Babina",
-        "Government Polytechnic, Jhansi",
+        "Government Polytechnic Babina",
+        "Government Polytechnic Jhansi",
         "Lakshmibai National Institute of Physical Education",
         "Raja Balwant Singh College",
         "Raja Balwant Singh Institute of Pharmacy",
@@ -304,7 +303,7 @@ const districtData = {
         "Government Polytechnic Chharra",
         "Government Polytechnic Chharra, Aligarh",
         "Government Polytechnic Manpur",
-        "Government Polytechnic, Aligarh",
+        "Government Polytechnic Aligarh",
         "Satyadeo Singh Memorial College",
         "Vivekanand Polytechnic College",
     ],
@@ -320,7 +319,7 @@ const districtData = {
         "Aryavart Institute of Technology and Management",
         "Chhatrapati Shahu Ji Maharaj Polytechnic",
         "Government Polytechnic Akbarpur",
-        "Government Polytechnic, Auraiya",
+        "Government Polytechnic Auraiya",
         "Sri Sai Polytechnic",
     ],
     "Kanpur Nagar": [
@@ -340,7 +339,7 @@ const districtData = {
         "G. S. R. M. College of Polytechnic",
         "Government Central Textile Institute",
         "Government Polytechnic Kanpur",
-        "Government Polytechnic, Kanpur",
+        "Government Polytechnic Kanpur",
         "H. B. Institute of Technology",
         "Harcourt Butler Technical University",
         "K. P. Engineering College",
@@ -378,7 +377,7 @@ const districtData = {
         "Pt. Ram Lakhan Shukla Polytechnic Institute",
     ],
     "Lakhimpur Kheri": [
-        "Government Girls Polytechnic, Maigalganj, Lakhimpur Kheri",
+        "Government Girls Polytechnic Maigalganj, Lakhimpur Kheri",
         "Government Polytechnic Lakhimpur Kheri",
         "Himachal Institute of Pharmacy",
         "Krishna Polytechnic College",
@@ -450,7 +449,7 @@ const districtData = {
     ],
     Maharajganj: ["Government Polytechnic Maharajganj"],
     Mahoba: [
-        "Government Polytechnic, Mahoba",
+        "Government Polytechnic Mahoba",
         "Swami Vivekanand College of Pharmacy",
         "Vivekanand Polytechnic",
     ],
@@ -482,7 +481,7 @@ const districtData = {
     Mirzapur: [
         "Gautam Buddha Polytechnic Institute",
         "Government Polytechnic Mirzapur",
-        "Rajkiya Polytechnic, Mirzapur",
+        "Rajkiya Polytechnic Mirzapur",
     ],
     Moradabad: [
         "G. S. R. M. Memorial College of Pharmacy",
@@ -495,7 +494,7 @@ const districtData = {
     ],
     Muzaffarnagar: [
         "Bhagwant Institute of Pharmacy",
-        "Government Polytechnic, Budhana",
+        "Government Polytechnic Budhana",
     ],
     Pilibhit: [
         "A R Y College of Pharmacy",
@@ -518,7 +517,7 @@ const districtData = {
         "Balwant Singh Polytechnic",
         "Chhatrapati Shahu Ji Maharaj Polytechnic",
         "Government Polytechnic Prayagraj",
-        "Government Polytechnic, Prayagraj",
+        "Government Polytechnic Prayagraj",
         "Rama Polytechnic",
         "Rama University",
         "Shivdan Singh Polytechnic",
@@ -544,7 +543,7 @@ const districtData = {
         "Feroze Gandhi Institute Of Engineering And Technology",
         "G. S. R. M. College of Polytechnic",
         "Government Polytechnic Raebareli",
-        "Government Polytechnic, Raebareli",
+        "Government Polytechnic Raebareli",
         "H. B. Institute of Technology",
         "Harcourt Butler Technical University",
         "K. P. Engineering College",
@@ -599,7 +598,7 @@ const districtData = {
         "Trident College of Pharmacy",
         "V. R. Institute of Pharmacy",
     ],
-    "Sant Ravidas Nagar (Bhadohi)": [
+    Bhadohi: [
         "Government Polytechnic",
         "Government Polytechnic Bhadohi",
         "Swami Vivekanand College of Pharmacy",
@@ -624,7 +623,7 @@ const districtData = {
         "Aryavart Institute of Technology and Management",
         "Chhatrapati Shahu Ji Maharaj Polytechnic",
         "Government Polytechnic Akbarpur",
-        "Government Polytechnic, Auraiya",
+        "Government Polytechnic Auraiya",
         "Sri Sai Polytechnic",
     ],
     Shravasti: ["Government Polytechnic", "Government Polytechnic Mahoba"],
@@ -655,7 +654,7 @@ const districtData = {
         "Swami Vivekanand College of Pharmacy",
     ],
     Unnao: [
-        "Government Polytechnic, Unnao",
+        "Government Polytechnic Unnao",
         "Pt. Ram Lakhan Shukla Polytechnic Institute",
     ],
     Varanasi: [
@@ -690,3 +689,8 @@ const districtData = {
         "Yashoda Polytechnic",
     ],
 };
+
+
+
+
+

@@ -10,7 +10,7 @@
     <meta name="keywords"
         content="Front Page Generator, branch selection, subject selection, student name input, download front page, generate front pages, academic front page generator, Feroze Gandhi Polytechnic, Computer Science and Engineering, Information Technology, FGP" />
     <title>Front Page Generator</title>
-    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/logo.jpg" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -304,43 +304,47 @@
     </div>
 
     <!-- Feedback Modal -->
-    <div id="feedbackModal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center z-50 hidden">
+    <div id="feedbackModal"
+        class="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center z-50 hidden">
         <div id="feedbackCard" class="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-xl relative">
             <!-- Close Button -->
             <button id="closeModal" class="absolute top-1 right-2 text-gray-600 hover:text-gray-900 text-4xl">
                 &times;
             </button>
 
-            <!-- 👋 Intro Section -->
             <div id="introSection" class="text-center">
-                <h2 class="sm:text-2xl text-xl font-bold text-gray-800 mb-3 mt-6">Welcome to Front Page Generator </h2>
+                <h2 class="text-2xl font-bold text-gray-800 mb-3 mt-6">Front Page Generator - UP</h2>
 
                 <hr class="mb-6" />
 
                 <p class="text-gray-700 text-justify">
-                    <strong>Front Page Generator (FPG)</strong> is a web-based tool designed to assist students of
-                    diploma colleges across Uttar Pradesh (UP)
-                    in quickly creating formatted front pages for their practical files, assignments.
+                    Hey there! Welcome to <strong>Front Page Generator</strong> — a web tool built especially for
+                    students of
+                    <strong>Diploma Colleges across Uttar Pradesh</strong>.
+                    If you’re tired of spending valuable time manually formatting the front pages for your academic
+                    practical files and assignments,
+                    you’re in the right place.
+                    This tool streamlines the process and helps you create clean, personalized front pages in just a few
+                    clicks.
                 </p>
 
-                <p class="text-gray-700 text-base mb-6 mt-3 text-justify">
-                    This tool allows you to input essential academic details like:
-                    your <strong>district</strong>, <strong>college name</strong>, <strong>session</strong>,
-                    <strong>branch</strong>, <strong>subject</strong>, <strong>teacher name</strong>,
-                    <strong>enrollment number</strong>, and your <strong>full name</strong>.
-                    Based on this information, FPG generates a clean, downloadable <strong>PDF front page</strong>
-                    that you can directly print or attach to your work.
+                <p class="text-gray-700 text-justify mt-3">
+                    Just select your district, college, branch, session, semester and enter your subject, teacher, name — and
+                    boom! Your front page is ready to download as a PDF.
+                </p>
+
+                <p class="text-gray-700 text-justify mt-3 mb-6">
+                    No matter which college you're studying at in UP,
+                    this tool is designed to work seamlessly for you. It’s fast, intuitive, and saves you time.
                 </p>
 
                 <hr class="mb-3" />
 
-
-                <p class="text-gray-600 mt-4 text-sm">
-                    Over <span class="font-semibold">500+ students</span> from various diploma institutes have used this
-                    tool so far — thank you for your support! 🙏
-                    <br />
-                    We'd love to hear your thoughts. Please take a moment to share your feedback and help us improve
-                    further.
+                <p class="text-gray-600 mt-4 text-sm text-center">
+                    Already trusted by <span class="font-semibold">500+ diploma students</span> from across Uttar
+                    Pradesh —
+                    thank you for your support! 🙏<br />
+                    We’d love to hear your feedback. It helps improve this tool and bring in features you actually need!
                 </p>
 
                 <button id="showFeedbackForm" onclick="showFeedbackForm()"
@@ -348,7 +352,6 @@
                     Give Feedback
                 </button>
             </div>
-
 
             <!-- Feedback Form Section (Initially Hidden) -->
             <form id="feedbackFormSection" name="feedbackForm" class="hidden mt-4">

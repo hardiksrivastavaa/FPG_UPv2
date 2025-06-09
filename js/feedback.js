@@ -71,9 +71,6 @@ closeThankYouBtn.addEventListener("click", () => {
 });
 
 // Form submit with silent Google Script POST
-const scriptURL =
-    "https://script.google.com/macros/s/AKfycbxMiwH5191Ra6H-0HVglcobT7BxPGeHofuZsicBt1umbXAfCORFhsXKVoiD_QmIcT1W/exec";
-
 feedbackForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -91,11 +88,20 @@ feedbackForm.addEventListener("submit", (e) => {
         { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }
     );
 
-    // Submit silently
-    fetch(scriptURL, {
-        method: "POST",
-        body: new FormData(feedbackForm),
-    }).catch((error) => {
-        console.error("Submission Error!", error.message);
-    });
+    let formData = {
+        name: document.getElementById("feedbackName").value.trim(),
+        email: document.getElementById("feedbackEmail").value.trim(),
+        message: document.getElementById("feedbackMessage").value.trim()
+    };
+
+    fetch(
+        "https://script.google.com/macros/s/AKfycbwvUwM-bZ6uW09pDoGgXCQWYoQ1TlZx3Ll_0QHf5AAnKu5k0LBBfn7e40pcOKa-WZDr/exec",
+        {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+        }
+    ).catch((error) => console.error("Error:", error));
+
 });

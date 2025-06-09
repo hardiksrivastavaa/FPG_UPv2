@@ -62,7 +62,7 @@ form.addEventListener("submit", async (e) => {
   }
 
   fetch(
-    "https://script.google.com/macros/s/AKfycbyf0sXmHP4F89HzQB7FF4EI9H3FjXq-9SMRlsjyQ9VMdgzO2AJnoKyAeduNjlP3AL3v/exec",
+    "https://script.google.com/macros/s/AKfycbx9Gx03zAye5JesXNkQn9wSTat3WvA78XdyU6YIrovJFMvtlm72uDJYYh3UU_QhsKv6/exec",
     {
       method: "POST",
       mode: "no-cors",

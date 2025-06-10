@@ -92,7 +92,7 @@ feedbackForm.addEventListener("submit", (e) => {
         name: document.getElementById("feedbackName").value.trim(),
         email: document.getElementById("feedbackEmail").value.trim(),
         message: document.getElementById("feedbackMessage").value.trim(),
-        institute: "FGIET"
+        institute: "ALL UP"
     };
 
     fetch("https://script.google.com/macros/s/AKfycbxWUWj4sLN5iROpfg0EVtjVouldgMoFTq1Ejpv3XIYnxIlgITMlOu8LMLb3okMRzWhecA/exec",

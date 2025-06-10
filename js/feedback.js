@@ -1,7 +1,7 @@
 // Modal Elements
 const modal = document.getElementById("feedbackModal");
 const introSection = document.getElementById("introSection");
-const feedbackFormSection = document.getElementById("feedbackFormSection")
+const feedbackFormSection = document.getElementById("feedbackFormSection");
 const modalContent = document.getElementById("feedbackCard");
 const closeBtn = document.getElementById("closeModal");
 const thankYouMessage = document.getElementById("thankYouMessage");
@@ -13,11 +13,12 @@ const showFeedbackForm = () => {
     introSection.classList.add("hidden");
     closeBtn.classList.remove("hidden");
     feedbackFormSection.classList.remove("hidden");
-}
+};
 
 // Function to apply a random message
 const applyRandomThankYouMessage = () => {
-    const randomMessage = thankYouMessages[Math.floor(Math.random() * thankYouMessages.length)];
+    const randomMessage =
+        thankYouMessages[Math.floor(Math.random() * thankYouMessages.length)];
     document.getElementById("heading").textContent = randomMessage.heading;
     document.getElementById("body").textContent = randomMessage.body;
     document.getElementById("subText").textContent = randomMessage.subText;
@@ -92,17 +93,15 @@ feedbackForm.addEventListener("submit", (e) => {
         name: document.getElementById("feedbackName").value.trim(),
         email: document.getElementById("feedbackEmail").value.trim(),
         message: document.getElementById("feedbackMessage").value.trim(),
-        institute: "All UP"
+        institute: "All UP",
     };
 
-    
-    fetch("https://script.google.com/macros/s/AKfycbxOyLHaLyk_Wc398lfaGto2lThLaYZq_MwFODOG2ZrpBARBxoPORO2-Zmhqwys8thqMew/exec",
-        {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-        }
-    ).catch((error) => console.error("Error:", error));
+    const url = "https://script.google.com/macros/s/AKfycbypEOWF8Drt-zS2HlWdttUnXx8WNpfo0lCCrLsyG43vhHJi_Sl4HCukFfuwA1_GtvmUCw/exec";
 
+    fetch(url, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+    }).catch((error) => console.error("Error:", error));
 });

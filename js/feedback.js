@@ -91,11 +91,11 @@ feedbackForm.addEventListener("submit", (e) => {
     let formData = {
         name: document.getElementById("feedbackName").value.trim(),
         email: document.getElementById("feedbackEmail").value.trim(),
-        message: document.getElementById("feedbackMessage").value.trim()
+        message: document.getElementById("feedbackMessage").value.trim(),
+        institute: "FGIET"
     };
 
-    fetch(
-        "https://script.google.com/macros/s/AKfycbwvUwM-bZ6uW09pDoGgXCQWYoQ1TlZx3Ll_0QHf5AAnKu5k0LBBfn7e40pcOKa-WZDr/exec",
+    fetch("https://script.google.com/macros/s/AKfycbxWUWj4sLN5iROpfg0EVtjVouldgMoFTq1Ejpv3XIYnxIlgITMlOu8LMLb3okMRzWhecA/exec",
         {
             method: "POST",
             mode: "no-cors",

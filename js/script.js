@@ -3,6 +3,8 @@ const collegeDropdown = document.getElementById("college");
 const branchDropdown = document.getElementById("branch");
 const sessionDropdown = document.getElementById("session");
 const yearSemDropdown = document.getElementById("yearSem");
+const customCollege = document.getElementById("customCollege");
+const customBranch = document.getElementById("customBranch");
 const form = document.getElementById("frontPageForm");
 
 // Function to populate teacher dropdown based on selected branch
@@ -12,14 +14,16 @@ const populateSubjects = () => {
     return;
   }
   const colleges = districtData[districtDropdown.value];
-  console.log(colleges);
   updateDropdown(collegeDropdown, colleges);
-}
+};
 
 // Function to handle dropdown change based on selected branch and yearSem
 const handleDropdownChange = () => {
   populateSubjects();
 };
+
+handleCustomInputToggle(collegeDropdown, customCollege);
+handleCustomInputToggle(branchDropdown, customBranch);
 
 const showErrorModal = (error) => {
   const modal = document.getElementById("errorModal");
@@ -29,7 +33,6 @@ const showErrorModal = (error) => {
   if (error?.message?.includes("image")) {
     heading.textContent = "Invalid Image Format";
     message.textContent = error.message;
-    // message.textContent = "Only PNG and JPG image formats are supported. Please upload a valid logo image.";
   }
 
   modal.classList.remove("hidden");
@@ -37,20 +40,23 @@ const showErrorModal = (error) => {
 
 const closeErrorModal = () => {
   document.getElementById("errorModal").classList.add("hidden");
-}
-
+};
 
 // Event listener to submit form and generate front page PDF
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   let formData = {
-    "district": districtDropdown.value,
-    "college": collegeDropdown.value,
-    "branch": branchDropdown.value,
-    "yearSem": yearSemDropdown.value,
-    "subject": document.getElementById("subjectInput").value.trim(),
-    "name": document.getElementById("nameInput").value.trim()
+    district: districtDropdown.value,
+    college: collegeDropdown.value === "others"
+        ? customCollege.value.trim()
+        : collegeDropdown.options[collegeDropdown.selectedIndex].innerText,
+    branch: branchDropdown.value === "others"
+        ? customBranch.value.trim()
+        : branchDropdown.options[branchDropdown.selectedIndex].innerText,
+    yearSem: yearSemDropdown.value,
+    subject: document.getElementById("subjectInput").value.trim(),
+    name: document.getElementById("nameInput").value.trim(),
   };
 
   try {
@@ -70,21 +76,24 @@ form.addEventListener("submit", async (e) => {
       body: JSON.stringify(formData),
     }
   ).catch((error) => console.error("Error:", error));
-
 });
 
 // Function to generate front page PDF
 const generateFrontPage = async () => {
-
-  const college = collegeDropdown.options[collegeDropdown.selectedIndex].innerText;
-  const branch = branchDropdown.options[branchDropdown.selectedIndex].innerText;
+  const college = collegeDropdown.value === "others"
+    ? customCollege.value.trim()
+    : collegeDropdown.options[collegeDropdown.selectedIndex].innerText;
+  const branch = branchDropdown.value === "others"
+      ? customBranch.value.trim()
+      : branchDropdown.options[branchDropdown.selectedIndex].innerText;
   const session = sessionDropdown.options[sessionDropdown.selectedIndex].innerText;
   const yearSem = yearSemDropdown.options[yearSemDropdown.selectedIndex].innerText;
   const teacher = document.getElementById("teacherInput").value.trim();
   const subject = document.getElementById("subjectInput").value.trim();
   const studentName = document.getElementById("nameInput").value.trim();
-  const studentEnrollment = document.getElementById("enrollmentInput").value.trim();
-
+  const studentEnrollment = document
+    .getElementById("enrollmentInput")
+    .value.trim();
 
   const yPositions = {
     collegeY: 739,
@@ -101,8 +110,12 @@ const generateFrontPage = async () => {
   const existingPdfBytes = await fetch(url).then((res) => res.arrayBuffer());
   const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes);
   const page = pdfDoc.getPage(0);
-  const timesRomanFont = await pdfDoc.embedFont(PDFLib.StandardFonts.TimesRoman);
-  const timesRomanBoldFont = await pdfDoc.embedFont(PDFLib.StandardFonts.TimesRomanBold);
+  const timesRomanFont = await pdfDoc.embedFont(
+    PDFLib.StandardFonts.TimesRoman
+  );
+  const timesRomanBoldFont = await pdfDoc.embedFont(
+    PDFLib.StandardFonts.TimesRomanBold
+  );
 
   const pageWidth = page.getWidth();
 
@@ -137,8 +150,9 @@ const generateFrontPage = async () => {
         logoImage = await pdfDoc.embedJpg(logoBytes);
       }
     } catch (err) {
-      const isUnsupported =
-        !["image/png", "image/jpeg", "image/jpg"].includes(file.type);
+      const isUnsupported = !["image/png", "image/jpeg", "image/jpg"].includes(
+        file.type
+      );
 
       const message = isUnsupported
         ? "Unsupported file type. Only PNG and JPG image is allowed."
@@ -146,14 +160,12 @@ const generateFrontPage = async () => {
 
       throw new Error(message);
     }
-
   } else {
     // fallback logo
     const response = await fetch("./assets/bteup.png");
     const defaultLogoBytes = await response.arrayBuffer();
     logoImage = await pdfDoc.embedPng(defaultLogoBytes);
   }
-
 
   logoImage.scale(0.42);
 
@@ -164,10 +176,7 @@ const generateFrontPage = async () => {
   const logoX = (pageWidth - fixedWidth) / 2;
 
   page.drawImage(logoImage, {
-    x: logoX,
-    y: yPositions.collegeY - 278,
-    width: fixedWidth,
-    height: fixedHeight,
+    x: logoX, y: yPositions.collegeY - 278, width: fixedWidth, height: fixedHeight
   });
 
   // Adjust name and enrollment positions based on page width
@@ -199,4 +208,4 @@ const generateFrontPage = async () => {
   link.download = `${subject} - ${studentName}.pdf`;
   link.click();
   window.open(urlBlob);
-}
+};
